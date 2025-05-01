@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Veterinaria</title>
+	<link rel="stylesheet" type="text/css" href="~/materialize/css/materialize.css" />
+	<link rel="stylesheet" type="text/css" href="~/css/theme_style.css" />
+	<script type="text/javascript" src="~/js/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="~/materialize/js/materialize.js"></script>
+	<script type="text/javascript" src="~/js/componentesMaterialize.js"></script>
+</head>
+<body>
+	<header class="row">
+		<div class="col s12 l4">
+			<img src="~/imagenes/pet.png" width="250" height="150" />
+		</div>
+		<div class="col s12 l4">
+			<div class="row loginField">
+				<div class="col s12 input-field">
+					<label for="txtUsuario">Usuario</label>
+					<input type="text" id="txtUsuario" name="txtUsuario" />
+				</div>
+			</div>
+			<div class="row loginField">
+				<div class="col s12 input-field">
+					<label>Password</label>
+					<input type="password" id="txtPassword" name="txtPassword" />
+				</div>
+			</div>
+		</div>
+		<div class="col s12 l4 valign">
+			<button type="button" id="btnIngresar" name="btnIngresar" class="btnVeterinaria">Ingresar</button>
+		</div>
+	</header>
+	<div class="row content">
+		<section class="menu col s12 l3">
+			<ul>
+				<li><a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
+				<li><a asp-area="" asp-controller="Veterinariums" asp-action="Index">Veterinaria</a></li>
+				<li><a asp-area="" asp-controller="Medicos" asp-action="Index">Medicos</a></li>
+				<li><a asp-area="" asp-controller="CitaMedicas" asp-action="Index">Citas Medicas</a></li>
+				<li><a asp-area="" asp-controller="Mascotums" asp-action="Index">Mascotas</a></li>
+			</ul>
+		</section>
+		<section class="col s12 l9">
+			@RenderBody()
+		</section>
+	</div>
+	<footer class="row">
+		<div class="col s12 l12">
+			<p>
+				Estamos ubicados en Manizales, Caldas, Colombia.<br />
+				Universidad de Caldas. Tel: 8871500.<br />
+				<strong>Veterinaria - Juan - 2016</strong>
+			</p>
+		</div>
+	</footer>
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

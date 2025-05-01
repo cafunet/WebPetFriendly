@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "bebas";
+  src: url("../fonts/BebasNeue.otf") format("otf");
+}
+
+#productos{
+	float: left;
+	width: 82%;
+	margin-right: 10px;
+}
+
+.item{
+	border: 2px solid;
+	padding: 10px;
+	height: 100px;
+	margin-bottom: 10px;
+	border-radius: 20px;
+}
+
+.imagenProducto{
+    width: 7%;
+	float: left;
+}
+
+.contenidoProducto{
+    width: 93%;
+	float: left;
+}
+
+.contenidoProducto > a{
+	float: right;
+	color: #3d794b;
+	font-weight: bold;
+}
+
+.contenidoProducto > a:hover{
+	color: #A4D071;
+	text-decoration: underline;
+}
+
+h1,h2,h3,h4{
+	color: #0f495d;
+	font-family: "bebas";
+}
+
+.header{
+	color: #ffffff;
+	height: 100px;
+	background-color: #0f495d;
+	font-size: 16px;
+	width: 100%;
+	max-width: 1500px;
+	text-align: right;
+}
+
+.menu{
+	float: left;
+	width: 15%;
+}
+
+.menu ul li{
+	border: 1px solid #cceaf7;
+	font-weight: 700;
+	height: auto;
+	letter-spacing: 0.05em;
+	border-radius: 40px;
+	text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+	margin-left: 10px;
+	font-family: "bebas";
+}
+
+li {
+    width: 145px;
+	list-style-type: none;
+}
+
+.menu ul li a{
+	color: #0f495d;
+}
+
+.menu ul li a:hover{
+	color: #007298;
+}
+
+.footer{
+	color: #039be5;
+	height: 100px;
+	background-color: #0f495d;
+	text-align: center;
+	padding: 10px;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.footer-mini {
+    font-family:"Arial";
+    font-size: 16px;
+}
+
+.links ul li{
+	float: left;
+	margin-left: 10px;
+	letter-spacing: 0.03em;
+}
+
+.links a{
+	color: #ffffff;
+	font-family: "bebas";
+}
+
+.box_login{
+	float:right;
+	font-family: "bebas";
+	width: 50%;
+	margin: 15px;
+}
+
+#botonIngresar{
+	background: #3d794b;
+	color: #ffffff;
+	height: 30px;
+	border-radius: 10px;
+	border: 0px;
+	width: 80px;
+	font-weight: bold;
+	font-family: "Arial";
+}
+
+#botonIngresar:hover{
+	background: rgba(42, 144, 66, 0.53);
+	color: #ffffff;
+}
+
+.button_login p{
+	color: #ffffff;
+	font-family: "Arial";
+	font-size: 13px;
+}
+
+.button_login a{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.button_login a:hover{
+	text-decoration: underline;
+	color: #ffffff;
+}

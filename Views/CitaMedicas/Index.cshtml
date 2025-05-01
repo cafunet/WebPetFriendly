@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebPetFriendly.Models.CitaMedica>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Citas medicas asignadas</h1>
+
+<p>
+    <a class="btn-small waves-effect waves-light green" asp-action="Create">Crear Cita medica</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fecha Cita
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sintomas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diagnostico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mascota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sintomas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diagnostico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Formula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mascota.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medico.Nombre)
+            </td>
+            <td>
+                <a class="btn-small waves-effect waves-light green" asp-action="Edit" asp-route-id="@item.IdCita">Editar</a> |
+                <a class="btn-small waves-effect waves-light blue" asp-action="Details" asp-route-id="@item.IdCita">Detalles</a> |
+                <a class="btn-small waves-effect waves-light red" asp-action="Delete" asp-route-id="@item.IdCita">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

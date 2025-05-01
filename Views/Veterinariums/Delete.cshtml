@@ -1,0 +1,95 @@
+﻿@model WebPetFriendly.Models.Veterinarium
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Elimina algun peludito :c</h1>
+
+<h4>Estas seguro de eliminar algun dato?</h4>
+<div>
+    <h4>Datos</h4>
+    <hr />
+
+    <ul class="collection">
+        <li class="collection-item">
+            <span class="title">NIT:</span>
+            @Html.DisplayFor(model => model.Nit)
+        </li>
+        <li class="collection-item">
+            <span class="title">Nombre:</span>
+            @Html.DisplayFor(model => model.Nombre)
+        </li>
+        <li class="collection-item">
+            <span class="title">Direccion:</span>
+            @Html.DisplayFor(model => model.Direccion)
+        </li>
+        <li class="collection-item">
+            <span class="title">Telefono:</span>
+            @Html.DisplayFor(model => model.Telefono)
+        </li>
+        <li class="collection-item">
+            <span class="title">Email:</span>
+            @Html.DisplayFor(model => model.Email)
+        </li>
+        <li class="collection-item">
+            <span class="title">Empleado:</span>
+            @Html.DisplayFor(model => model.Empleados)
+        </li>
+        <li class="collection-item">
+            <span class="title">Fecha de fundacion:</span>
+            @Html.DisplayFor(model => model.FechaFundacion)
+        </li>
+    </ul>
+
+    @* <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleados)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Empleados)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaFundacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaFundacion)
+        </dd>
+    </dl> *@
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn-small waves-effect waves-light red" /> |
+        <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+    </form>
+</div>

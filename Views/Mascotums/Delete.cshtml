@@ -1,0 +1,45 @@
+﻿@model WebPetFriendly.Models.Mascotum
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar peludos</h1>
+
+<h3>Estas seguro de eliminar algun peludo?</h3>
+<div>
+    <h4>Mascotas:</h4>
+    <hr />
+    <ul class="collection">
+        <li class="collection-item">
+            <span class="title">Nombre:</span>
+            @Html.DisplayFor(model => model.Nombre)
+        </li>
+        <li class="collection-item">
+            <span class="title">Especie:</span>
+            @Html.DisplayFor(model => model.Especie)
+        </li>
+        <li class="collection-item">
+            <span class="title">Raza:</span>
+            @Html.DisplayFor(model => model.Raza)
+        </li>
+        <li class="collection-item">
+            <span class="title">Color:</span>
+            @Html.DisplayFor(model => model.Color)
+        </li>
+        <li class="collection-item">
+            <span class="title">Fecha de nacimiento:</span>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </li>
+        <li class="collection-item">
+            <span class="title">Propietario:</span>
+            @Html.DisplayFor(model => model.Propietario)
+        </li>
+    </ul>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdMascota" />
+        <input type="submit" value="Eliminar" class="btn-small waves-effect waves-light red" /> |
+        <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+    </form>
+</div>

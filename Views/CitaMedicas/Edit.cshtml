@@ -1,0 +1,56 @@
+﻿@model WebPetFriendly.Models.CitaMedica
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar datos de la cita</h1>
+
+<h4>Cita Medica</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCita" />
+            <div class="form-group">
+                <label asp-for="Medico" class="control-label"></label>
+                <select asp-for="MedicoId" class="form-control" asp-items="ViewBag.MedicoId"></select>
+                <span asp-validation-for="MedicoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mascota" class="control-label"></label>
+                <select asp-for="MascotaId" class="form-control" asp-items="ViewBag.MascotaId"></select>
+                <span asp-validation-for="MascotaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCita" class="control-label">Fecha Cita</label>
+                <input asp-for="FechaCita" type="text" class="datepicker" />
+                <span asp-validation-for="FechaCita" ></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sintomas" class="control-label"></label>
+                <input asp-for="Sintomas" class="form-control" />
+                <span asp-validation-for="Sintomas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diagnostico" class="control-label"></label>
+                <input asp-for="Diagnostico" class="form-control" />
+                <span asp-validation-for="Diagnostico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Formula" class="control-label"></label>
+                <input asp-for="Formula" class="form-control" />
+                <span asp-validation-for="Formula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn-small waves-effect waves-light green" /> |
+                <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

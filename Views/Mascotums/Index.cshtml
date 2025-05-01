@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebPetFriendly.Models.Mascotum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mascotas registradas</h1>
+
+<p>
+    <a class="btn-small waves-effect waves-light green" asp-action="Create">Crear nueva mascota</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Raza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Propietario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Raza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Propietario)
+            </td>
+            <td>
+                <a class="btn-small waves-effect waves-light green" asp-action="Edit" asp-route-id="@item.IdMascota">Editar</a> |
+                <a class="btn-small waves-effect waves-light blue" asp-action="Details" asp-route-id="@item.IdMascota">Detalles</a> |
+                <a class="btn-small waves-effect waves-light red" asp-action="Delete" asp-route-id="@item.IdMascota">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

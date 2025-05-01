@@ -1,0 +1,66 @@
+﻿@model WebPetFriendly.Models.Medico
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar medicos</h1>
+
+<h3>Estas seguro de borrar algun medico?</h3>
+<div>
+    <h4>Datos:</h4>
+    <hr />
+    <ul class="collection">
+        <li class="collection-item">
+            <span class="title">Cedula:</span>
+            @Html.DisplayFor(model => model.Cedula)
+        </li>
+        <li class="collection-item">
+            <span class="title">Nombre:</span>
+            @Html.DisplayFor(model => model.Nombre)
+        </li>
+        <li class="collection-item">
+            <span class="title">Apellido:</span>
+            @Html.DisplayFor(model => model.Apellido)
+        </li>
+        <li class="collection-item">
+            <span class="title">Direccion:</span>
+            @Html.DisplayFor(model => model.Direccion)
+        </li>
+        <li class="collection-item">
+            <span class="title">Telefono:</span>
+            @Html.DisplayFor(model => model.Telefono)
+        </li>
+        <li class="collection-item">
+            <span class="title">Email:</span>
+            @Html.DisplayFor(model => model.Email)
+        </li>
+        <li class="collection-item">
+            <span class="title">Fecha de nacimiento:</span>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </li>
+        <li class="collection-item">
+            <span class="title">Genero:</span>
+            @Html.DisplayFor(model => model.Genero)
+        </li>
+        <li class="collection-item">
+            <span class="title">Pais:</span>
+            @Html.DisplayFor(model => model.Pais)
+        </li>
+        <li class="collection-item">
+            <span class="title">Departamento:</span>
+            @Html.DisplayFor(model => model.Departamento)
+        </li>
+        <li class="collection-item">
+            <span class="title">Ciudad:</span>
+            @Html.DisplayFor(model => model.Ciudad)
+        </li>
+    </ul>
+
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdMedico" />
+        <input type="submit" value="Eliminar" class="btn-small waves-effect waves-light red" /> |
+        <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+    </form>
+</div>

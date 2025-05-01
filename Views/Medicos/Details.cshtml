@@ -1,0 +1,63 @@
+﻿@model WebPetFriendly.Models.Medico
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Medico</h4>
+    <hr />
+    <ul class="collection">
+        <li class="collection-item">
+            <span class="title">Cedula:</span>
+            @Html.DisplayFor(model => model.Cedula)
+        </li>
+        <li class="collection-item">
+            <span class="title">Nombres:</span>
+            @Html.DisplayFor(model => model.Nombre)
+        </li>
+        <li class="collection-item">
+            <span class="title">Apellidos:</span>
+            @Html.DisplayFor(model => model.Apellido)
+        </li>
+        <li class="collection-item">
+            <span class="title">Direccion:</span>
+            @Html.DisplayFor(model => model.Direccion)
+        </li>
+        <li class="collection-item">
+            <span class="title">Telefono:</span>
+            @Html.DisplayFor(model => model.Telefono)
+        </li>
+        <li class="collection-item">
+            <span class="title">Email:</span>
+            @Html.DisplayFor(model => model.Email)
+        </li>
+        <li class="collection-item">
+            <span class="title">Fecha de nacimiento:</span>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </li>
+        <li class="collection-item">
+            <span class="title">Genero:</span>
+            @Html.DisplayFor(model => model.Genero)
+        </li>
+        <li class="collection-item">
+            <span class="title">Pais:</span>
+            @Html.DisplayFor(model => model.Pais)
+        </li>
+        <li class="collection-item">
+            <span class="title">Departamento:</span>
+            @Html.DisplayFor(model => model.Departamento)
+        </li>
+        <li class="collection-item">
+            <span class="title">Ciudad:</span>
+            @Html.DisplayFor(model => model.Ciudad)
+        </li>
+    </ul>
+
+</div>
+<div>
+    <a class="btn-small waves-effect waves-light blue" asp-action="Edit" asp-route-id="@Model?.IdMedico">Editar</a> |
+    <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+</div>

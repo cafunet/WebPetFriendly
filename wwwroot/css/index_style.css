@@ -1,0 +1,39 @@
+#productos{
+	float: left;
+	width: 82%;
+	margin-right: 10px;
+}
+
+.item{
+	border: 2px solid;
+	padding: 10px;
+	height: 100px;
+	margin-bottom: 10px;
+	border-radius: 20px;
+}
+
+.imagenProducto{
+    width: 7%;
+	float: left;
+}
+
+.contenidoProducto{
+    width: 93%;
+	float: left;
+}
+
+.contenidoProducto > a{
+	float: right;
+	color: #3d794b;
+	font-weight: bold;
+}
+
+.contenidoProducto > a:hover{
+	color: #A4D071;
+	text-decoration: underline;
+}
+
+li{
+    float: left;
+    margin-left: 10px;
+}

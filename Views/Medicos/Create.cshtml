@@ -1,0 +1,126 @@
+﻿@model WebPetFriendly.Models.Medico
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Registrar nuevo medico</h1>
+
+<br />
+<!-- El formulario ahora envía por método POST -->
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- Si se está editando, se incluye la cédula original en un campo oculto -->
+    @if (Model?.Cedula != null)
+    {
+        <input type="hidden" name="OriginalCedula" value="@Model.Cedula" />
+    }
+
+    <div class="row">
+        <div class="col s12">
+            <label asp-for="Cedula" class="control-label"></label>
+            <input asp-for="Cedula" class="form-control" value="@Model?.Cedula" />
+            <span asp-validation-for="Cedula" class="text-danger" style="display:none"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <label asp-for="Nombre" class="control-label"></label>
+            <input asp-for="Nombre" class="form-control" value="@Model?.Nombre" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+        <div class="col s6">
+            <label asp-for="Apellido" class="control-label"></label>
+            <input asp-for="Apellido" class="form-control" value="@Model?.Apellido" />
+            <span asp-validation-for="Apellido" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <label asp-for="Direccion" class="control-label"></label>
+            <input asp-for="Direccion" class="form-control" value="@Model?.Direccion" />
+            <span asp-validation-for="Direccion" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <label asp-for="Telefono" class="control-label"></label>
+            <input asp-for="Telefono" class="form-control" value="@Model?.Telefono" />
+            <span asp-validation-for="Telefono" class="text-danger"></span>
+        </div>
+        <div class="col s6">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" value="@Model?.Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <label asp-for="FechaNacimiento" class="control-label"></label>
+            <input type="text" id="FechaNacimiento" name="FechaNacimiento" class="datepicker" value="@(Model?.FechaNacimiento.ToString("MM/dd/yyyy") ?? "")" />
+            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <label asp-for="Genero" class="control-label"></label>
+            <p>
+                <label>
+                    <input class="with-gap" name="Genero" type="radio" id="M" value="M" @(Model?.Genero == "Masculino" ? "checked" : "") />
+                    <span>Masculino</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input class="with-gap" name="Genero" type="radio" id="F" value="F" @(Model?.Genero == "Femenino" ? "checked" : "") />
+                    <span>Femenino</span>
+                </label>
+            </p>
+            <span asp-validation-for="Genero" class="text-danger"></span>
+        </div>
+    </div>
+    <fieldset class="row">
+        <legend>Lugar de Nacimiento</legend>
+        <div class="col s4 input-field">
+            <select name="Pais" id="Pais">
+                <option value="" disabled selected>--País--</option>
+                <option value="CO" selected="@(Model?.Pais == "CO" ? "selected" : null)">Colombia</option>
+                <option value="ES" selected="@(Model?.Pais == "ES" ? "selected" : null)">España</option>
+                <option value="MX" selected="@(Model?.Pais == "MX" ? "selected" : null)">México</option>
+                <option value="CA" selected="@(Model?.Pais == "CA" ? "selected" : null)">Canadá</option>
+                <option value="IT" selected="@(Model?.Pais == "IT" ? "selected" : null)">Italia</option>
+            </select>
+        </div>
+        <div class="col s4 input-field">
+            <select name="Departamento" id="Departamento">
+                <option value="" disabled selected>--Departamento--</option>
+                <option value="17" selected="@(Model?.Departamento == "17" ? "selected" : null)">Caldas</option>
+                <option value="05" selected="@(Model?.Departamento == "05" ? "selected" : null)">Antioquia</option>
+                <option value="01" selected="@(Model?.Departamento == "01" ? "selected" : null)">Atlántico</option>
+                <option value="03" selected="@(Model?.Departamento == "03" ? "selected" : null)">Bogotá</option>
+                <option value="06" selected="@(Model?.Departamento == "06" ? "selected" : null)">Cundinamarca</option>
+            </select>
+        </div>
+        <div class="col s4 input-field">
+            <select name="Municipio" id="Municipio">
+                <option value="" disabled selected>--Municipio--</option>
+                <option value="17001" selected="@(Model?.Ciudad == "17001" ? "selected" : null)">Manizales</option>
+                <option value="05001" selected="@(Model?.Ciudad == "05001" ? "selected" : null)">Medellín</option>
+                <option value="01001" selected="@(Model?.Ciudad == "01001" ? "selected" : null)">Barranquilla</option>
+                <option value="03001" selected="@(Model?.Ciudad == "03001" ? "selected" : null)">Bogotá</option>
+                <option value="06001" selected="@(Model?.Ciudad == "06001" ? "selected" : null)">Zipaquirá</option>
+            </select>
+        </div>
+    </fieldset>
+    <div class="row">
+        <div class="col s12 center">
+            <button type="submit" class="btn-small waves-effect waves-light green">@(string.IsNullOrEmpty(Model?.Cedula) ? "Crear" : "Actualizar")</button> |
+            <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

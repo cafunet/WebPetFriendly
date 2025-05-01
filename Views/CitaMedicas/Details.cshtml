@@ -1,0 +1,40 @@
+﻿@model WebPetFriendly.Models.CitaMedica
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles de la cita medica</h1>
+
+<div>
+    <ul class="collection">
+        <li class="collection-item">
+            <span class="title">Fecha Cita:</span>
+            @Html.DisplayFor(model => model.FechaCita)
+        </li>
+        <li class="collection-item">
+            <span class="title">Sintomas:</span>
+            @Html.DisplayFor(model => model.Sintomas)
+        </li>
+        <li class="collection-item">
+            <span class="title">Diagnostico:</span>
+            @Html.DisplayFor(model => model.Diagnostico)
+        </li>
+        <li class="collection-item">
+            <span class="title">Formula:</span>
+            @Html.DisplayFor(model => model.Formula)
+        </li>
+        <li class="collection-item">
+            <span class="title">Mascota:</span>
+            @Html.DisplayFor(model => model.Mascota.Nombre)
+        </li>
+        <li class="collection-item">
+            <span class="title">Medico:</span>
+            @Html.DisplayFor(model => model.Medico.Nombre)
+        </li>
+    </ul>
+</div>
+<div>
+    <a class="btn-small waves-effect waves-light blue" asp-action="Edit" asp-route-id="@Model?.IdCita">Editar</a> |
+    <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+</div>

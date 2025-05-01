@@ -1,0 +1,44 @@
+﻿@model WebPetFriendly.Models.CitaMedica
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1> Estas seguro de eliminar esta cita medica para tu mascota?</h1>
+
+<div>
+    <h4>Cita medica a eliminar:</h4>
+    <hr />
+    <ul class="collection">
+        <li class="collection-item">
+            <span class="title">Fecha Cita:</span>
+            @Html.DisplayFor(model => model.FechaCita)
+        </li>
+        <li class="collection-item">
+            <span class="title">Sintomas:</span>
+            @Html.DisplayFor(model => model.Sintomas)
+        </li>
+        <li class="collection-item">
+            <span class="title">Diagnostico:</span>
+            @Html.DisplayFor(model => model.Diagnostico)
+        </li>
+        <li class="collection-item">
+            <span class="title">Formula:</span>
+            @Html.DisplayFor(model => model.Formula)
+        </li>
+        <li class="collection-item">
+            <span class="title">Mascota:</span>
+            @Html.DisplayFor(model => model.Mascota.Nombre)
+        </li>
+        <li class="collection-item">
+            <span class="title">Medico:</span>
+            @Html.DisplayFor(model => model.Medico.Nombre)
+        </li>
+    </ul>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCita" />
+        <input type="submit" value="Eliminar" class="btn-small waves-effect waves-light red" /> |
+        <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+    </form>
+</div>

@@ -1,0 +1,84 @@
+/* @font-face {
+  font-family: "bebas";
+  src: url("../fonts/BebasNeue.otf") format("otf");
+} */
+
+@font-face {
+	font-family: "grechen";
+	src: url("../fonts/GrechenFuemen-Regular.ttf");
+  }
+
+h1,h2,h3,h4{
+	color: #0f495d;
+	font-family: "grechen";
+}
+
+header{
+	color: #ffffff;
+	height: 150px;
+	background-color: #0f495d;
+	font-size: 16px;
+	width: 100%;
+	max-width: 1500px;
+	text-align: center;
+}
+
+.menu ul li{
+	border: 1px solid #8edafa;
+	font-weight: 700;
+	height: auto;
+	letter-spacing: 0.05em;
+	border-radius: 40px;
+	text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+	margin-left: 10px;
+	font-family: "grechen";
+}
+
+/*li {
+    width: 160px;
+}*/
+
+.menu ul li a{
+	color: #0f495d;
+}
+
+.menu ul li a:hover{
+	color: #039be5;
+}
+
+footer{
+	color: #039be5;
+	height: 100px;
+	background-color: #0f495d;
+	text-align: center;
+	padding: 10px;
+}
+
+.btnVeterinaria {
+	color: #ffffff;
+	height: 30px;
+	border-radius: 10px;
+	border: 0px;
+	/*width: 80px;*/
+	font-weight: bold;
+	font-family: "Arial";
+	margin-top: 60px;
+	margin-left: 10px;
+	background-color: rgba(42, 144, 66, 0.53);
+}
+
+	.btnVeterinaria:hover {
+		background-color: transparent;
+		color: rgba(42, 144, 66, 0.53);
+		border: 2px solid rgba(42, 144, 66, 0.53);
+	}
+
+.loginField{
+	margin-bottom: 0px;
+}
+
+.content{
+	height: auto;
+}

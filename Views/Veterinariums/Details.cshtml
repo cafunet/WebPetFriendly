@@ -1,0 +1,46 @@
+﻿@model WebPetFriendly.Models.Veterinarium
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles de tus peludos</h1>
+
+<div>
+    <h4>Datos:</h4>
+    <hr />
+    <ul class="collection"> 
+        <li class="collection-item">
+            <span class="title">NIT:</span>
+            @Html.DisplayFor(model => model.Nit)
+        </li>
+        <li class="collection-item">
+            <span class="title">Nombre:</span>
+            @Html.DisplayFor(model => model.Nombre)
+        </li>
+        <li class="collection-item">
+            <span class="title">Direccion:</span>
+            @Html.DisplayFor(model => model.Direccion)
+        </li>
+        <li class="collection-item">
+            <span class="title">Telefono:</span>
+            @Html.DisplayFor(model => model.Telefono)
+        </li>
+        <li class="collection-item">
+            <span class="title">Email:</span>
+            @Html.DisplayFor(model => model.Email)
+        </li>
+        <li class="collection-item">
+            <span class="title">Empleado:</span>
+            @Html.DisplayFor(model => model.Empleados)
+        </li>
+        <li class="collection-item">
+            <span class="title">Fecha de fundacion:</span>
+            @Html.DisplayFor(model => model.FechaFundacion)
+        </li>
+    </ul>
+</div>
+<div>
+    <a class="btn-small waves-effect waves-light blue" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a class="btn-small waves-effect waves-light grey" asp-action="Index">Regresar</a>
+</div>
